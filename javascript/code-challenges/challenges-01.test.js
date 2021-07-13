@@ -7,7 +7,6 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
-const baseArray01 = [1, 2, 3, 4, 5];
 
 const addOne = (arr) => {
   // Solution code here...
@@ -17,7 +16,7 @@ const addOne = (arr) => {
   });
   return newArray01;
 };
-addOne(baseArray01);
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -25,7 +24,6 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
-const baseArray02 = ["hi", "how", "are"];
 
 const addExclamation = (arr) => {
   // Solution code here...
@@ -35,7 +33,6 @@ const addExclamation = (arr) => {
   });
   return newArray02;
 };
-addExclamation(baseArray02);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -44,7 +41,6 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
-const baseArray03 = ["hi", "how", "are", "you"];
 
 const allUpperCase = (arr) => {
   // Solution code here...
@@ -54,8 +50,6 @@ const allUpperCase = (arr) => {
   });
   return newArray03;
 };
-
-allUpperCase(baseArray03);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -72,8 +66,6 @@ const greeting = (word) => {
   return word.toUpperCase() + "!";
 };
 
-const baseArray04 = ["hello", "301", "students"];
-
 const speaker = (words, callback) => {
   // Solution code here...
   const newArray04 = [];
@@ -82,8 +74,6 @@ const speaker = (words, callback) => {
   });
   return newArray04;
 };
-
-speaker(baseArray04, greeting);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -100,7 +90,6 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
-const baseArray05 = [];
 
 const addValues = (arr, value) => {
   // Solution code here...
@@ -109,13 +98,13 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  // Can't use forEach on the times parameter being passed in so used a for loop. This value is
+  // not an array to run forEach on.
   for (let i = 0; i < times; i++) {
     callback(arr, num);
   }
   return arr;
 };
-
-addNumbers(8, baseArray05, 5, addValues);
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -134,13 +123,6 @@ The inventory is formatted like this:
 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
-const inventory = [
-  { name: "apples", available: true },
-  { name: "pears", available: true },
-  { name: "oranges", available: false },
-  { name: "bananas", available: true },
-  { name: "blueberries", available: false },
-];
 
 const createList = (availableItems) => {
   // Solution code here...
@@ -152,8 +134,6 @@ const createList = (availableItems) => {
   });
   return newArray06;
 };
-
-createList(inventory);
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
@@ -168,7 +148,6 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
-const baseArray07 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 const fizzbuzz = (arr) => {
   // Solution code here...
@@ -193,8 +172,6 @@ const fizzbuzz = (arr) => {
   });
   return newArray07;
 };
-
-fizzbuzz(baseArray07);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
