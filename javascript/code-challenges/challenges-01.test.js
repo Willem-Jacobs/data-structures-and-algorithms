@@ -152,24 +152,17 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   // Solution code here...
   const newArray07 = [];
-  arr.forEach((value) => {
-    switch (value) {
-      case value % 15 === 0:
-        newArray07.push("Fizz Buzz");
-        break;
-      case value % 3 === 0:
-        newArray07.push("Fizz");
-        break;
-      case value % 5 === 0:
-        newArray07.push("Buzz");
-        break;
-      default:
-        if (value === 0) {
-          newArray07.push(value);
-          break;
-        }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 15 === 0) {
+      newArray07.push("Fizz Buzz");
+    } else if (arr[i] % 3 === 0) {
+      newArray07.push("Fizz");
+    } else if (arr[i] % 5 === 0) {
+      newArray07.push("Buzz");
+    } else {
+      newArray07.push(arr[i]);
     }
-  });
+  }
   return newArray07;
 };
 
@@ -244,7 +237,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test("It should print out messages or numbers", () => {
