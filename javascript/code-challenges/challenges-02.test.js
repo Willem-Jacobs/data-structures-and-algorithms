@@ -226,7 +226,7 @@ const extractStats = (arr) => {
   const newArr = arr.map((item) => {
     return {
       name: item.stat.name,
-      total: item.effort + +item.baseStat,
+      total: item.effort + item.baseStat,
     };
   });
   return newArr;
