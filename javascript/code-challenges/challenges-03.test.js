@@ -314,7 +314,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-describe("Testing challenge 7", () => {
+xdescribe("Testing challenge 7", () => {
   test("It should return the name of the stats that exceed that maximum", () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([
       "special-defense",
