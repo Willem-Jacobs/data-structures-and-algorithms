@@ -124,15 +124,8 @@ Write a function named getStatName that is an extension of your getBaseStatGreat
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
-const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
-  const newArray = arr.filter((item) => {
-    if (item.baseStat > minBaseStat) {
-      return item.stat.name;
-    }
-  });
-  return newArray;
-};
+const getStatName = (arr, minBaseStat) =>
+  arr.filter((stat) => stat.baseStat > minBaseStat).map((obj) => obj.stat.name);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -314,7 +307,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return the name of the stats that exceed that maximum", () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([
       "special-defense",
