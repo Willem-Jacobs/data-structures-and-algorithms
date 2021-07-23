@@ -188,15 +188,21 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) =>
-    a.lastName > b.lastName
-      ? 1
-      : a.firstName > b.firstName
-      ? a.age > b.age
-        ? 1
-        : -1
-      : 1
-  );
+  return arr.sort(( a, b) => {
+    if (a.lastName < b.lastName) {
+      return -1;
+    }
+    if (a.lastName > b.lastName) {
+      return 1;
+    }
+    if (a.firstName < b.firstName) {
+      return -1;
+    }
+    if (a.firstName > b.firstName) {
+      return 1;
+    }
+    return a.age - b.age
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -221,8 +227,21 @@ const meetings = [
   new Meeting("Friday", "1200", "1345"),
 ];
 
+const dayMap = {
+  'Monday': 1,
+  'Tuesday': 2,
+  'Wednesday': 3,
+  'Thursday': 4,
+  'Friday': 5,
+  'Saturday': 6,
+  'Sunday': 7
+}
+
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  return arr.sort(( a, b ) => {
+    return dayMap[a.dayOfWeek] - dayMap[b.dayOfWeek]
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -237,6 +256,9 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  const newArray = sortMeetingsByDay(arr);
+  return newArray.sort(( a, b) => +a.start - +b.start);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
