@@ -63,8 +63,8 @@ Note: You may not use the array's built-in length property.
 const countNumberOfElements = (arr) => {
   // Solution code here...
   let count = arr.reduce((acc, value, idx) => {
-    return acc + idx;
-  }, 0)
+    return idx + 1;
+  })
   return count;
 };
 
@@ -126,6 +126,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let newArray = arr.reduce((acc, value) => {
+    acc.push(value.name);
+    return acc;
+  }, []);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,6 +143,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  let newString = str.split('').reduce((acc, value) => {
+    return value + acc;
+  }, '')
+  return newString;
 };
 
 /* ------------------------------------------------------------------------------------------------
