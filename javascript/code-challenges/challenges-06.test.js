@@ -22,15 +22,16 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
-  // Solution code here...
-  let newArray = arr.map((item) => {
-    return item.name.split("").reduce((acc, value) => {
-      return value + acc;
-    }, "");
-  });
-  return newArray;
-};
+const getNames = (arr) =>
+  arr.map((item) => item.name.split("").reverse().join(""));
+// Solution code here...
+//   let newArray = arr.map((item) => {
+//     return item.name.split("").reduce((acc, value) => {
+//       return value + acc;
+//     }, "");
+//   });
+//   return newArray;
+// };
 
 // let newString = str.split('').reduce((acc, value) => {
 //   return value + acc;
@@ -44,11 +45,11 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = (str) => {
-  // Solution code here...
-  let newString = str + " The end.";
-  return newString;
-};
+const appendTheEnd = (str) => str + " The end.";
+//   // Solution code here...
+//   let newString = str + " The end.";
+//   return newString;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
