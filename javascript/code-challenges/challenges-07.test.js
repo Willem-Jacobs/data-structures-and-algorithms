@@ -129,7 +129,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let newArray = [...recipe.ingredients];
+  newArray.forEach((item) => {
+    let n = item.indexOf(" ", 3);
+    let res = item.substring(n + 1);
+    result.push(res);
+  });
   return result;
 };
 
@@ -316,7 +321,7 @@ describe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should return a list of foods", () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual([
       "Gruffalo",
