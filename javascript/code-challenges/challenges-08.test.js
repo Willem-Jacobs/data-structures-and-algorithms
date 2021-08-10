@@ -110,8 +110,12 @@ Write a function named isCapitalized that takes in a string. This function shoul
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
-
-const isCapitalized = (str) => str.match(/[A-Z].*?\b/g);
+// str.match(/[A-Z].*?\b/g) /[A-Z][a-zA-Z]*/g
+const isCapitalized = (str) => {
+  let regex = /[A-Z].*?\b/g;
+  let result = str.match(regex);
+  return result || [];
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -273,7 +277,7 @@ describe("Testing challenge 5", () => {
       "May",
     ]);
 
-    expect(isCapitalized("these words are all failures")).toStrictEqual(null);
+    expect(isCapitalized("these words are all failures")).toStrictEqual([]);
   });
 });
 
