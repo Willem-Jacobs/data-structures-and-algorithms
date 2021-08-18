@@ -97,11 +97,11 @@ const grandTotal = (stores) => {
   // Solution code here...
   let hourlySales = [];
   for (let i = 0; i < hoursOpen.length; i++) {
-    let temp1 = 0;
+    let hourTotal = 0;
     for (let j = 0; j < stores.length; j++) {
-      temp1 += stores[j][i];
+      hourTotal += stores[j][i];
     }
-    hourlySales.push(temp1);
+    hourlySales.push(hourTotal);
   }
   return hourlySales;
 };
