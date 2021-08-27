@@ -79,6 +79,8 @@ const standardizePhoneNumbers = (arr) => {
   return newArray;
 };
 
+// return arr.map((num) => `${num.substring(1,4)}${num.substring(6,9)}${num.substring(10)}`);
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
 
@@ -99,6 +101,8 @@ const onlyOddChars = (str) => {
   return newStr;
 };
 
+// return str.split('').filter((elem,idx) => idx % 2 === 1).join('');
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
 
@@ -117,6 +121,8 @@ const allHappy = (arr) => {
   });
   return checker;
 };
+
+// return arr.every((str) => str.includes(':)'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
